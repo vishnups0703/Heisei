@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Map</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for the map container */
+        #map {
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="header">
+                <h1>Blackmode Admin</h1>
+                <p>Powered by Heisei</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fa fa-home"></i> Dashboard</a></li>
+                    <li><a href="liveMap.html" class="active"><i class="fa fa-map"></i> Live Map</a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="header">
+                <span>Live Map</span>
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- Include the JavaScript for the map here -->
+    <script>
+        function initMap() {
+            // Initialize the map (example with Google Maps API)
+            const mapOptions = {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8,
+            };
+            new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+    </script>
+    <!-- Ensure your API key is correct and that your API restrictions are properly set -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
